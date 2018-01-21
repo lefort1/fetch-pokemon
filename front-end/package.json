@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "react": "^16.2.0",
+    "react-autosuggest": "^9.3.2",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.0"
+    "react-scripts": "1.1.0",
+    "react-search-bar": "^2.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

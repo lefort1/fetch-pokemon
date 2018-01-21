@@ -15,10 +15,16 @@ app.get('/', function (req, res) {
     res.json('you did it');
 });
 //====Retrieve Pokemon===//
-app.get('/pokemon', function (req, res) {
-    client.get("https://pokeapi.co/api/v2/pokemon/1/", function (data, response) {
-        res.json(data);
+app.get('/pokemon/:id', function (req, res) {
+    let id = req.param('id');
+    let uri = "https://pokeapi.co/api/v2/pokemon/" +id;
+    client.get(uri, function (data, response) {
+        res.set({
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin' : 'http://localhost:3000/pokemon',
+          })    
+    res.json(data);
     })
 });
 
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+app.listen(3001, () => console.log('Example app listening on port 3001!'));
